@@ -1,0 +1,14 @@
+#login
+    .main_content
+        .body_content
+            .logo_content
+                img(src='https://cds.neoauto.g3c.pe/neoauto3/img/neoauto-inverted.svg?20180530162250')
+            form.frm_register(@submit.prevent='logIn')
+                fieldset.fieldset_user
+                    label(for='user') Usuario: 
+                    input.txt_user(type='email', name='user', v-model='form.user', required)
+                fieldset.fieldset_password
+                    label(for='password') Clave: 
+                    input.txt_password(type='password', name='password ', v-model='form.pass', required)
+                .foot-box
+                    button.btn_login(type='submit') INGRESAR
