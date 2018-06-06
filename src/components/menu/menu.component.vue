@@ -1,3 +1,3 @@
 <template lang="pug" src='./menu.component.pug'></template>
-<style lang='stylus' src='./menu.component.styl'></style>
-<script src='./menu.component.js'></script>
+<style lang='stylus' scoped src='./menu.component.styl'></style>
+<script lang='ts' src='./menu.component.ts'></script>

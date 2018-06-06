@@ -2,12 +2,14 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/components/main.js',
+  entry: './src/components/main.ts',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'build.js'
   },
+  devtool: 'inline-source-map',
+  // mode: "development",
   module: {
     rules: [
       {
@@ -47,9 +49,16 @@ module.exports = {
         ]
       },
       {
-        test: /\.pug$/,
-        loader: 'pug-plain-loader'
-      }
+        test: /\.(jade|pug)$/,
+        use: ['raw-loader', 'pug-html-loader']
+      },
+      {
+        test: /\.ts$/,
+        loader: 'ts-loader',
+        options: {
+          appendTsSuffixTo: [/\.vue$/]
+        }
+      },
     ]
   },
   resolve: {
